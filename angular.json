@@ -43,7 +43,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -123,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "reactive-forms"
+    }
+  },
+  "defaultProject": "reactive-forms",
+  "cli": {
+    "analytics": "564d27bd-c9bb-41bd-a5a8-f4a8cb5fe2ce"
+  }
 }
