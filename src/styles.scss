@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/eric-meyer-reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap');
+
+@import "~@progress/kendo-theme-default/dist/all.scss";
+$accent: #b9090b;
+
+@import "~@progress/kendo-theme-default/scss/dropdownlist/_index.scss";
+
+// ALYSSA TODO: import custom theme
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $accent;
+  letter-spacing: -0.025em;
+  font-size: 70px;
+  line-height: 1.1;
+  font-style: normal;
+  opacity: 1;
+}
