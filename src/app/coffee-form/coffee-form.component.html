@@ -1,1 +1,36 @@
-<p>coffee-form works!</p>
+<h2>Order Now!</h2>
+
+<form [formGroup]="coffeeOrderForm" (ngSubmit)="onSubmitForm()">
+  <section>
+      <input 
+    type="text"
+    placeholder="Customer Name"
+    formControlName="customerName">
+  </section>
+
+  <section formArrayName="specialRequests">
+    <h1>Special Requests</h1>
+    <ul>
+      <li *ngFor="let item of specialRequestsControls.controls; let i = index">
+        <input formControlName="{{i}}" type="text">
+        <button 
+          type="button" 
+          title="Remove Request"
+          (click)="onRemoveSpecialRequest(i)"
+        >x</button>
+      </li>
+    </ul>
+    <button 
+      type="button"
+      (click)="onAddSpecialRequest()"
+    >Add a Request</button>
+  </section>
+
+
+  <button class="k-button" type="submit">Submit Order</button>
+  <button class="k-button" type="button" (click)="onResetForm()">Clear Order Form</button>
+
+
+</form>
+
+<p class="debug-that-form">{{ coffeeOrderForm.value | json }}</p>
