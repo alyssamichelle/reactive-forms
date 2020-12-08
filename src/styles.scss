@@ -2,15 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap');
 @import './assets/styles/colors.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import "~@progress/kendo-theme-material/dist/all.scss";
+@import "~@progress/kendo-theme-default/dist/all.scss";
 // ALYSSA TODO: import custom theme
 
-@import "~@progress/kendo-theme-material/scss/dropdownlist/_index.scss";
-
-
-* {
-  font-family: 'Noto Sans KR', sans-serif;
-}
+@import "~@progress/kendo-theme-default/scss/dropdownlist/_index.scss";
 
 html {
   font-size: 14px; // for my rems
@@ -22,6 +17,7 @@ body {
 }
 
 h1 {
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   color: $accent;
