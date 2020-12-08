@@ -19,7 +19,17 @@ export class CoffeeFormComponent {
       customerName: this.formBuilder.control(null),
       specialRequests: this.formBuilder.array([
         this.formBuilder.control(null)
-      ])
+      ]),
+      milks: this.formBuilder.group({
+        milkBreve: this.formBuilder.control(null),
+        milkWhole: this.formBuilder.control(null),
+        milkTwoPercent: this.formBuilder.control(null),
+        milkSkim: this.formBuilder.control(null),
+        milkAlmondVanilla: this.formBuilder.control(null),
+        milkAlmondPlain: this.formBuilder.control(null),
+        milkOat: this.formBuilder.control(null),
+        milkCoconut: this.formBuilder.control(null)
+      })
     });
 
     this.specialRequestsControls = this.coffeeOrderForm.get('specialRequests') as FormArray;

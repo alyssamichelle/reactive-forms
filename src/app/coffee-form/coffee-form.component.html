@@ -2,34 +2,90 @@
 
 <form [formGroup]="coffeeOrderForm" (ngSubmit)="onSubmitForm()">
   <section>
-      <input 
-    type="text"
-    placeholder="Customer Name"
-    formControlName="customerName">
+    <h1>Customer Info</h1>
+    <fieldset class="inline-on-large">
+      <kendo-label>Customer Name</kendo-label>
+        <input 
+          type="text"
+          kendoTextBox
+          formControlName="customerName">
+    </fieldset>
+
+    <fieldset class="inline-on-large">
+      <kendo-label>Vehichle Type & Color</kendo-label>
+        <input 
+          type="text"
+          kendoTextBox
+          formControlName="customerVehichle">
+    </fieldset>
   </section>
 
-  <section formArrayName="specialRequests">
+  <section formArrayName="specialRequests" class="inline-on-large">
     <h1>Special Requests</h1>
     <ul>
       <li *ngFor="let item of specialRequestsControls.controls; let i = index">
-        <input formControlName="{{i}}" type="text">
-        <button 
-          type="button" 
-          title="Remove Request"
-          (click)="onRemoveSpecialRequest(i)"
-        >x</button>
+        <fieldset>
+          <input kendoTextBox formControlName="{{i}}" type="text">
+          <button 
+            type="button" 
+            title="Remove Request"
+            (click)="onRemoveSpecialRequest(i)"
+            class="k-button"
+          >x</button>
+        </fieldset>
       </li>
     </ul>
     <button 
       type="button"
       (click)="onAddSpecialRequest()"
+      class="k-button"
     >Add a Request</button>
   </section>
 
+  <!-- Show checkboxes and then show a dropdownlist -->
+  <section formGroupName="milks">
+    <h1>Milk Type</h1>
+    <ul>
+      <li>
+        <input formControlName="milkBreve" type="checkbox" kendoCheckBox id="milkBreve">
+      <kendo-label for="milkBreve">Breve</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkWhole" type="checkbox" kendoCheckBox id="milkWhole">
+      <kendo-label for="milkWhole">Whole</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkTwoPercent" type="checkbox" kendoCheckBox id="milkTwoPercent">
+      <kendo-label for="milkTwoPercent">2%</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkSkim" type="checkbox" kendoCheckBox id="milkSkim">
+      <kendo-label for="milkSkim">Skim</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkAlmondVanilla" type="checkbox" kendoCheckBox id="milkAlmondVanilla">
+      <kendo-label for="milkAlmondVanilla">Almond (Vanilla)</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkAlmondPlain" type="checkbox" kendoCheckBox id="milkAlmondPlain">
+      <kendo-label for="milkAlmondPlain">Almond (Plain)</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkOat" type="checkbox" kendoCheckBox id="milkOat">
+      <kendo-label for="milkOat">Oat</kendo-label>
+      </li>
+      <li>
+        <input formControlName="milkCoconut" type="checkbox" kendoCheckBox id="milkCoconut">
+      <kendo-label for="milkCoconut">Coconut</kendo-label>
+      </li>
+    </ul>
 
-  <button class="k-button" type="submit">Submit Order</button>
-  <button class="k-button" type="button" (click)="onResetForm()">Clear Order Form</button>
+  </section>
 
+  <section class="inline-on-large">
+    <button class="k-button" type="submit">Submit Order</button>
+    <button class="k-button" type="button" (click)="onResetForm()">Clear Order Form</button>
+  </section>
 
 </form>
 

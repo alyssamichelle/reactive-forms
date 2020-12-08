@@ -10,13 +10,44 @@
 form {
   display: flex;
   flex-direction: column;
-  max-width: 40vw;
 
-  * {
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  section, fieldset.inline-on-large {
     margin-bottom: 1rem;
   }
 
-  @media only screen and (max-width: 800px) {
+  .inline-on-large {
+    display: flex;
+    align-items: flex-start;
+
+    h1, kendo-label, label {
+      line-height: 2rem;
+      margin-right: 0.5rem;
+    }
+
+    button {
+      margin-right: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
     max-width: 95vw;
+
+    .inline-on-large {
+      display: block;
+
+      h1, kendo-label, label {
+        line-height: normal;
+        margin-right: 0;
+      }
+      button {
+        margin-right: 0;
+      }
+    }
   }
 }

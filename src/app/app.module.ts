@@ -9,6 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoffeeFormComponent } from './coffee-form/coffee-form.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { LabelModule } from '@progress/kendo-angular-label';
+
+
 
 @NgModule({
   declarations: [
@@ -22,6 +26,8 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     ReactiveFormsModule,
     DropDownsModule,
     BrowserAnimationsModule,
+    InputsModule,
+    LabelModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
